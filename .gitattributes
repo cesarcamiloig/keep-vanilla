@@ -1,0 +1,3 @@
+# Forzar saltos de linea LF (estilo Linux) en todos los archivos de texto
+# Esto evita que Git en Windows altere los hashes SHA-256 calculados por Packwiz en Docker
+* text=auto eol=lf
