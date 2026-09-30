@@ -1,0 +1,7 @@
+# Excluir archivos de infraestructura y repositorio del modpack exportado
+Dockerfile
+README.md
+.git/
+.github/
+.gitignore
+.packwizignore
