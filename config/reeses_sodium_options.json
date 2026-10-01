@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "tabHeaderIcons": true,
+  "tabHeaderVersionLabels": true,
+  "tabHeaders": true,
+  "collapseSinglePageGroups": false,
+  "collapsibleGroups": true,
+  "tooltipDelayMs": 0,
+  "tooltipOptionIds": false,
+  "colorThemes": true,
+  "themedHeadersAndLabels": true,
+  "themedTooltipBorders": true,
+  "reducedMotion": false,
+  "reverseCyclingControls": false,
+  "shiftScrollSliderAdjustments": true,
+  "searchResultLimit": 10,
+  "hideNonMatchingOptions": true,
+  "hideNonMatchingTabs": true,
+  "controllerGuides": true,
+  "resetButtonOverlay": true,
+  "undoButtonOverlay": true,
+  "alwaysShowActionButtons": false
+}

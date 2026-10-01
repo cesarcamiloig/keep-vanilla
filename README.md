@@ -20,6 +20,17 @@ El objetivo central del modpack es exprimir al máximo el rendimiento del juego 
 
 ---
 
+## Configuración Predeterminada de Alto Rendimiento
+
+*Keep Vanilla* incluye una configuración predeterminada equilibrada desde el primer inicio, diseñada para ofrecer la máxima estabilidad y suavidad sin deteriorar los gráficos:
+
+- **Distancia de Renderizado (12 chunks):** Horizonte amplio y natural (~441 chunks cargados) reduciendo en más del 60 % la carga geométrica en GPU frente a distancias excesivas (20-24 chunks).
+- **Distancia de Simulación (10 chunks):** Mantiene la esfera de *spawning* y comportamiento de entidades idéntica a Vanilla (128 bloques / 8 chunks), garantizando el funcionamiento exacto de granjas y circuitos de redstone con una reducción del 30 % en tiempo de tick de CPU.
+- **Pipeline de Terreno y Chunks:** Generación multihilo adaptada a la CPU (`chunkBuilderThreads: 0`), aplazamiento suave de mallas (`chunkBuildDeferMode: ALWAYS`) para eliminar micro-tirones al romper/colocar bloques, y oclusión de caras internas y fluidos ocultos.
+- **Fidelidad Gráfica Intacta:** Gráficos en modo detallado (*Fancy*), iluminación suave máxima (*Ambient Occlusion*), todas las partículas y animaciones de fluidos activas, y distancia de entidades al 100 %.
+
+---
+
 ## Stack de Componentes
 
 El modpack se compone de 17 componentes estrictamente seleccionados y organizados por capas técnicas:

@@ -5,6 +5,14 @@ file = "config/modmenu.json"
 hash = "ce8bcca512766e1ac6015d90a0fb7720b5238ac2083ec7a7d48fbefefc4e2d80"
 
 [[files]]
+file = "config/reeses_sodium_options.json"
+hash = "765f416799a9b62b3599db9f6c4f3f2ffa69dfa8158668bcbdd1202778157e05"
+
+[[files]]
+file = "config/sodium-options.json"
+hash = "6ed6b5d04cc7773808b63a69224519035aaedae461c558fcd3ac35e2b29e9190"
+
+[[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "3635aff985b59e95eabf5ca9be77d20d25c9d4e2b20f97df42639ea794eda1f3"
 metafile = true
@@ -83,6 +91,10 @@ metafile = true
 file = "mods/sodium.pw.toml"
 hash = "e0274d780169d81e54561b2c71ed188d6864f6bdf0d73c70ec351d925a9b2e18"
 metafile = true
+
+[[files]]
+file = "options.txt"
+hash = "bae0b561272ae54356485147f27613a70acd973d4a0d678bb3bab2312d9a3832"
 
 [[files]]
 file = "resourcepacks/translations-for-sodium.pw.toml"

@@ -13,7 +13,6 @@ shaderpacks/*.zip
 resourcepacks/*.zip
 usercache.json
 usernamecache.json
-options.txt
 
 # Sistema operativo y entornos de desarrollo
 .DS_Store

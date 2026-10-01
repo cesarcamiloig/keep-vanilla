@@ -1,0 +1,26 @@
+{
+  "quality": {
+    "hiddenFluidCulling": true,
+    "improvedFluidShaping": true,
+    "useClosestPointEntitySort": true,
+    "pixelFilteringMode": "NEAREST"
+  },
+  "performance": {
+    "chunkBuilderThreads": 0,
+    "chunkBuildDeferMode": "ALWAYS",
+    "animateOnlyVisibleTextures": true,
+    "useEntityCulling": true,
+    "useFogOcclusion": true,
+    "useBlockFaceCulling": true,
+    "useNoErrorGLContext": true,
+    "quadSplittingMode": "SAFE"
+  },
+  "advanced": {
+    "enableMemoryTracing": false
+  },
+  "notifications": {
+    "hasClearedDonationButton": true,
+    "hasSeenDonationPrompt": true,
+    "hasEditedFullscreenOption": true
+  }
+}
