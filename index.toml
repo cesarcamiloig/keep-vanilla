@@ -1,8 +1,12 @@
 hash-format = "sha256"
 
 [[files]]
+file = "POLITICA_VERSIONES.md"
+hash = "305b8f1c07719193eda61d95621ab597527cf9bbac0a06335a8eb3abe968a9d9"
+
+[[files]]
 file = "config/modmenu.json"
-hash = "b68174945a59b5db918a1207cf0e6485a5e5c8afa3161b72d2c577aec383f5bb"
+hash = "ce8bcca512766e1ac6015d90a0fb7720b5238ac2083ec7a7d48fbefefc4e2d80"
 
 [[files]]
 file = "mods/cloth-config.pw.toml"
