@@ -1,6 +1,15 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/modmenu.json"
+hash = "b68174945a59b5db918a1207cf0e6485a5e5c8afa3161b72d2c577aec383f5bb"
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "7fa9592b9948b8809018a4e7c3ca7da4d19fc5ef8c03021414cb22ae0253f083"
+metafile = true
+
+[[files]]
 file = "mods/dynamic-fps.pw.toml"
 hash = "fe17d2b9b63e19e1818f55d9d376aaec0c42c9fd9812d9a2f6d1c4160abd161b"
 metafile = true
