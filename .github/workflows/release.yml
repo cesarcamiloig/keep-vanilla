@@ -45,13 +45,15 @@ jobs:
           generate_release_notes: true
           name: "Keep Vanilla ${{ github.ref_name }}"
           body: |
-            ## Keep Vanilla - Modpack de Optimización para Minecraft 26.2
+            ## Keep Vanilla - Minecraft Vanilla Optimizado + Calidad de Vida (Minecraft 26.2)
+
+            Una experiencia de Minecraft Vanilla optimizada, estable y eficiente, acompañada de mejoras de calidad de vida cuidadosamente seleccionadas para preservar la esencia y jugabilidad original del juego.
 
             ### Instrucciones de Instalación:
             1. Descarga el archivo `.mrpack` adjunto abajo.
-            2. Abre **PineconeMC**, **Prism Launcher** o **Modrinth App**.
+            2. Abre **Prism Launcher**, **Modrinth App**, **PineconeMC** o **ATLauncher**.
             3. Haz clic en **Añadir Instancia -> Importar** y selecciona el archivo `.mrpack`.
-            4. ¡Listo para jugar con rendimiento extremo y soporte de shaders opcional!
+            4. ¡Listo para jugar con máximo rendimiento, estabilidad y comodidad!
 
       # 5. Publicar automáticamente en Modrinth
       - name: Publicar en Modrinth

@@ -13,6 +13,11 @@ file = "config/sodium-options.json"
 hash = "6ed6b5d04cc7773808b63a69224519035aaedae461c558fcd3ac35e2b29e9190"
 
 [[files]]
+file = "mods/appleskin.pw.toml"
+hash = "cf46b0633057bda5b393258410b6cf92c2cd7a42a92744b2c4fb0046cc452e61"
+metafile = true
+
+[[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "3635aff985b59e95eabf5ca9be77d20d25c9d4e2b20f97df42639ea794eda1f3"
 metafile = true
@@ -20,6 +25,11 @@ metafile = true
 [[files]]
 file = "mods/cloth-config.pw.toml"
 hash = "7fa9592b9948b8809018a4e7c3ca7da4d19fc5ef8c03021414cb22ae0253f083"
+metafile = true
+
+[[files]]
+file = "mods/controlling.pw.toml"
+hash = "7eb393873758aef07d7123e526ab8986b656a58d0b8d01b7ac3c4825a1a02041"
 metafile = true
 
 [[files]]
@@ -35,6 +45,11 @@ metafile = true
 [[files]]
 file = "mods/fabric-api.pw.toml"
 hash = "af4c96fcc59bec634f457bf7693496f203ceaac28a180e84a73c488a1a2895cb"
+metafile = true
+
+[[files]]
+file = "mods/fabzoom.pw.toml"
+hash = "b015c4f929c5566dd2e4ed172663044ae040bb63231ea7b14668daf97d31131f"
 metafile = true
 
 [[files]]
@@ -73,6 +88,11 @@ hash = "dc9906e45919f5b3a31e3d5582cd97bdd7534f56c2a5e730b9de41875a97e1eb"
 metafile = true
 
 [[files]]
+file = "mods/mouse-tweaks.pw.toml"
+hash = "e37b46af7cfa8f24e9895c37789b43d80d8abe519becf4f08d9e1ea1529fc126"
+metafile = true
+
+[[files]]
 file = "mods/placeholder-api.pw.toml"
 hash = "b234ade7fd54bb9d99c27769cd1635b18835752676d0cdd0a29af2b4146251a8"
 metafile = true
@@ -80,6 +100,16 @@ metafile = true
 [[files]]
 file = "mods/reeses-sodium-options.pw.toml"
 hash = "4e51a0f3dfcf56385afb976565e76b1288e8d3ef3a7612bda72072df2e94e235"
+metafile = true
+
+[[files]]
+file = "mods/searchables.pw.toml"
+hash = "18d343982316153f5b40b9d2e0e6ac3884b873774eec756ff67e891a4d3c22b9"
+metafile = true
+
+[[files]]
+file = "mods/shulkerboxtooltip.pw.toml"
+hash = "5bb9d1ff544ce0ca6591f50a61efcac29c4ca22880bac17a4d1a61010fc663fa"
 metafile = true
 
 [[files]]

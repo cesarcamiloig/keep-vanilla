@@ -1,7 +1,6 @@
 # Infraestructura y archivos de repositorio excluidos del modpack
 Dockerfile
 README.md
-icon.png
 *.mrpack
 *.zip
 .git/

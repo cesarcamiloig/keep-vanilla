@@ -10,11 +10,12 @@ Su propósito es proporcionar directrices exactas y procedimientos paso a paso e
 
 Cualquier cambio, adición o modificación en el repositorio debe alinearse estrictamente con los pilares del proyecto:
 
-1. **Máxima Optimización Técnica:** El objetivo principal es exprimir el rendimiento de Minecraft al límite técnico posible: maximizar fotogramas por segundo (FPS), estabilizar el tiempo de cuadro (*frame time*), erradicar micro-tirones (*stuttering*), acelerar tiempos de carga y optimizar el uso de CPU, GPU y memoria RAM.
-2. **Mecánicas 100 % Vanilla:** No se admiten modificaciones que agreguen bloques, ítems, dimensiones, mecánicas de juego ajenas o que alteren los comportamientos nativos de Minecraft (físicas, *spawning* o *despawning* de criaturas, circuitos de redstone, colisiones o tasas de crecimiento de cultivos).
-3. **Libertad de Configuración al Usuario:** El modpack proporciona herramientas y configuraciones para que el usuario elija su propio balance entre calidad gráfica y rendimiento.
-4. **Fidelidad Gráfica Predeterminada:** La configuración por defecto del modpack **no debe recortar la calidad visual de forma agresiva**. Opciones como calidad de hojas (*Fancy*), nubes, cielo, sol, luna, partículas completas y animaciones deben permanecer activas en la configuración inicial.
-5. **Reproducibilidad y Gestión Declarativa:** El modpack no almacena binarios `.jar` en el repositorio Git. Todas las dependencias se gestionan declarativamente mediante **Packwiz**, garantizando firmas criptográficas (SHA-256 / SHA-512) y compilaciones idénticas.
+1. **Máxima Optimización Técnica:** El objetivo fundamental es exprimir el rendimiento de Minecraft al límite técnico posible: maximizar fotogramas por segundo (FPS), estabilizar el tiempo de cuadro (*frame time*), erradicar micro-tirones (*stuttering*), acelerar tiempos de carga y optimizar el uso de CPU, GPU y memoria RAM.
+2. **Mejoras de Calidad de Vida (Quality of Life) Cuidadosamente Seleccionadas:** Se integran funciones prácticas y discretas que eliminan molestias o fricciones cotidianas (zoom suave, previsualización de cajas de shulker, transparencia de saturación, arrastre ágil de inventario y buscador de controles), sin alterar la esencia ni la dificultad del juego.
+3. **Mecánicas 100 % Vanilla:** No se admiten modificaciones que agreguen bloques, ítems, dimensiones, mecánicas de juego ajenas o que alteren los comportamientos nativos de Minecraft (físicas, combate, *spawning* o *despawning* de criaturas, circuitos de redstone, colisiones o tasas de crecimiento de cultivos).
+4. **Libertad de Configuración al Usuario:** El modpack proporciona herramientas y configuraciones para que el usuario elija su propio balance entre calidad gráfica y rendimiento.
+5. **Fidelidad Gráfica Predeterminada:** La configuración por defecto del modpack **no debe recortar la calidad visual de forma agresiva**. Opciones como calidad de hojas (*Fancy*), nubes, cielo, sol, luna, partículas completas y animaciones deben permanecer activas en la configuración inicial.
+6. **Reproducibilidad y Gestión Declarativa:** El modpack no almacena binarios `.jar` en el repositorio Git. Todas las dependencias se gestionan declarativamente mediante **Packwiz**, garantizando firmas criptográficas (SHA-256 / SHA-512) y compilaciones idénticas.
 
 ---
 
@@ -32,30 +33,35 @@ proyecto-modpack-optimizacion/
 │   ├── modmenu.json                  # Ajustes de UI de Mod Menu
 │   ├── reeses_sodium_options.json    # Ajustes de interfaz vertical y buscador de Sodium
 │   └── sodium-options.json           # Parámetros avanzados del motor Sodium
-├── mods/                             # Manifiestos de mods gestionados por Packwiz
-│   ├── badoptimizations.pw.toml
-│   ├── cloth-config.pw.toml
-│   ├── dynamic-fps.pw.toml
-│   ├── entityculling.pw.toml
-│   ├── fabric-api.pw.toml
-│   ├── ferrite-core.pw.toml
-│   ├── immediatelyfast.pw.toml
-│   ├── iris.pw.toml
-│   ├── krypton.pw.toml
-│   ├── lithium.pw.toml
-│   ├── modernfix-mvus.pw.toml
-│   ├── modmenu.pw.toml
-│   ├── placeholder-api.pw.toml
-│   ├── reeses-sodium-options.pw.toml
-│   ├── sodium-extra.pw.toml
-│   └── sodium.pw.toml
+├── mods/                             # Manifiestos de mods gestionados por Packwiz (22 mods)
+│   ├── appleskin.pw.toml             # [QoL] Visualización de saturación y comida
+│   ├── badoptimizations.pw.toml      # [Opt] Micro-optimizaciones de tick de cliente
+│   ├── cloth-config.pw.toml          # [Base] Librería de UI de configuración
+│   ├── controlling.pw.toml           # [QoL] Buscador y gestor de teclas
+│   ├── dynamic-fps.pw.toml           # [Opt] Reducción de consumo en segundo plano
+│   ├── entityculling.pw.toml         # [Opt] Oclusión asíncrona de entidades
+│   ├── fabric-api.pw.toml            # [Base] API modular para Fabric
+│   ├── fabzoom.pw.toml               # [QoL] Zoom suave con tecla 'C'
+│   ├── ferrite-core.pw.toml          # [Opt] Reducción de memoria en modelos/bloques
+│   ├── immediatelyfast.pw.toml       # [Opt] Optimización de render de HUD/GUI
+│   ├── iris.pw.toml                  # [Opt] Pipeline moderno de shaders
+│   ├── krypton.pw.toml               # [Opt] Optimización de pila de red
+│   ├── lithium.pw.toml               # [Opt] Optimización de tick de físicas e IA
+│   ├── modernfix-mvus.pw.toml        # [Opt] Memoria y aceleración de arranque
+│   ├── modmenu.pw.toml               # [Base] Pantalla de gestión de mods
+│   ├── mouse-tweaks.pw.toml          # [QoL] Manipulación ergonómica de inventario
+│   ├── placeholder-api.pw.toml       # [Base] Librería de formateo de texto
+│   ├── reeses-sodium-options.pw.toml # [Opt] Navegación vertical de opciones de vídeo
+│   ├── searchables.pw.toml           # [Base] Librería de búsqueda para Controlling
+│   ├── shulkerboxtooltip.pw.toml     # [QoL] Previsualización de cajas de shulker
+│   ├── sodium-extra.pw.toml          # [Opt] Control granular gráfico
+│   └── sodium.pw.toml                # [Opt] Motor principal de renderizado
 ├── resourcepacks/                    # Recursos integrados en el modpack
 │   └── translations-for-sodium.pw.toml
 ├── .gitattributes                    # Forzado de saltos de línea LF (* text eol=lf)
 ├── .gitignore                        # Exclusiones de Git (binarios, caches, logs)
 ├── .packwizignore                    # Exclusiones del paquete .mrpack final
 ├── Dockerfile                        # Imagen aislada para ejecutar Packwiz CLI
-├── icon.png                          # Icono oficial del modpack (512x512)
 ├── index.toml                        # Índice criptográfico generado por Packwiz (¡NO EDITAR A MANO!)
 ├── MANUAL_OPERACIONES.md             # Este manual operativo
 ├── options.txt                       # Configuración base de Minecraft y Sodium (overrides)
@@ -163,10 +169,12 @@ El repositorio cuenta con un archivo `.gitattributes` configurado con `* text eo
 ### Procedimiento 1: Añadir un Nuevo Mod al Modpack
 
 Antes de agregar cualquier mod, debe pasar por la **comprobación de admisión**:
-1. ¿Aporta una mejora técnica medible (FPS, frametime, memoria, carga, red)?
-2. ¿Respeta el principio Vanilla (cero bloques nuevos, cero alteración de físicas, redstone o spawning)?
-3. ¿Dispone de versión nativa y estable para la versión objetivo de Minecraft (`26.2`) y Fabric Loader?
-4. ¿Es compatible con el stack existente (Sodium, Iris, Lithium, ModernFix, ImmediatelyFast)?
+1. ¿Aporta una mejora técnica cuantificable (optimización) o soluciona una fricción clara de usabilidad sin alterar la esencia (calidad de vida)?
+2. ¿Respeta con fidelidad el principio Vanilla (cero bloques/ítems nuevos, cero alteración de combate, físicas, redstone o spawning)?
+3. ¿No introduce ventajas desleales tipo cheat ni modifica el balance de dificultad del juego?
+4. ¿Dispone de versión nativa y estable para la versión objetivo de Minecraft (`26.2`) y Fabric Loader?
+5. ¿Es compatible con el stack existente (Sodium, Iris, Lithium, ModernFix, ImmediatelyFast, etc.)?
+6. ¿Tiene impacto nulo o imperceptible en el frametime, memoria RAM y uso de CPU?
 
 **Pasos:**
 1. Crear una rama de trabajo:

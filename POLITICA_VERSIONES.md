@@ -11,10 +11,10 @@ Este documento establece el flujo técnico de actualización de dependencias y c
 - **Flujo:** Automatizado mediante GitHub Actions. El flujo ejecuta `packwiz update --all` semanalmente y, si detecta cambios compatibles, abre un Pull Request contra la rama `main`.
 - **Criterio de aprobación:** Se revisa el diff en los archivos `.pw.toml` e `index.toml`. Si los hashes son válidos y la versión de Minecraft permanece inalterada, el cambio se fusiona.
 
-### Nuevas Dependencias o Configuraciones
-- **Alcance:** Introducción de librerías requeridas por nuevos parches o ajustes en la carpeta `config/`.
-- **Flujo:** Manual o auditado en PR.
-- **Criterio de aceptación:** Se descarta cualquier librería o ajuste que altere las mecánicas base de Minecraft, introduzca contenido ajeno a Vanilla o comprometa la estabilidad técnica del juego.
+### Nuevas Dependencias, Mejoras de Calidad de Vida o Configuraciones
+- **Alcance:** Introducción de componentes de calidad de vida (QoL), librerías auxiliares requeridas o ajustes en las carpetas `config/` y `options.txt`.
+- **Flujo:** Manual y auditado en PR.
+- **Criterio de aceptación:** Las adiciones deben cumplir estrictamente con los criterios de Quality of Life de Keep Vanilla: aportar comodidad y practicidad, no agregar contenido nuevo, no alterar mecánicas base de Minecraft (redstone, spawning, físicas), mantener discreción estética Vanilla y garantizar cero penalización de rendimiento. Se descarta cualquier componente invasivo o inestable.
 
 ### Saltos de Versión de Minecraft (Major Updates)
 - **Alcance:** Migración del modpack a una nueva versión mayor de Minecraft (ej. de `26.2` a futuras versiones).

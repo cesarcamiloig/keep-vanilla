@@ -1,22 +1,33 @@
-<p align="center">
-  <img src="icon.png" alt="Keep Vanilla Logo" width="128" height="128" />
-</p>
-
 # Keep Vanilla
 
-Modpack de optimización profunda, estabilidad de *frame time* y eficiencia de recursos para **Minecraft 26.2** sobre **Fabric Loader**.
+Una experiencia de **Minecraft Vanilla optimizada, estable y eficiente**, acompañada de **mejoras de calidad de vida cuidadosamente seleccionadas** para hacer el juego más cómodo sin alterar su esencia ni mecánicas base.
 
-Construido bajo un principio claro: **máxima optimización técnica sin alterar las mecánicas base de Minecraft, dejando el control visual y la personalización gráfica en manos del usuario.**
+Diseñado para **Minecraft 26.2** sobre **Fabric Loader**.
 
 ---
 
 ## Filosofía de Keep Vanilla
 
-El objetivo central del modpack es exprimir al máximo el rendimiento del juego —tasas altas de FPS, estabilidad en el tiempo de cuadro (*frame time*), tiempos de carga reducidos y eliminación de micro-tirones (*stuttering*)— manteniendo intacta la experiencia y la jugabilidad de Minecraft Vanilla:
+*Keep Vanilla* combina dos objetivos fundamentales en perfecta armonía:
 
-- **Mecánicas 100 % Vanilla:** Sin añadir contenido ajeno ni alterar físicas, sistemas de redstone, colisiones, spawning de criaturas ni mecánicas del juego base.
-- **Optimización integral del motor:** Sodium, Lithium, ImmediatelyFast, FerriteCore y Entity Culling rediseñan el renderizado, el consumo de memoria Heap y la lógica en CPU de manera limpia y eficiente.
-- **Libertad total de configuración:** El modpack integra herramientas para que cada jugador configure libremente su balance entre calidad visual y rendimiento. Ya sea que busques exprimir hasta el último fotograma en hardware modesto o disfrutar de shaders complejos en equipos potentes, la decisión sobre partículas, animaciones, niebla o distancia de renderizado es siempre tuya.
+> **Optimización profunda + estabilidad + eficiencia + mejoras de calidad de vida, manteniendo intacta la esencia y jugabilidad de Vanilla.**
+
+- **Esencia 100 % Vanilla:** No añade bloques, criaturas, dimensiones, armas ni altera el sistema de combate, progresión o recetas. Las físicas, el *spawning* y *despawning* de criaturas, los circuitos de redstone y los tiempos de crecimiento permanecen exactamente idénticos al juego base.
+- **Optimización Integral del Motor:** Sodium, Lithium, ImmediatelyFast, FerriteCore, ModernFix y Entity Culling rediseñan el renderizado, el consumo de memoria Heap y la lógica en CPU para erradicar micro-tirones (*stuttering*) y maximizar la estabilidad del *frame time*.
+- **Mejoras de Calidad de Vida (Quality of Life):** Funcionalidades discretas y altamente prácticas que eliminan fricciones cotidianas (zoom suave configurable con tecla `C`, previsualización de cajas de shulker en inventario, transparencia de valores de saturación, arrastre ergonómico de ítems y buscador de controles).
+- **Libertad Total de Configuración:** Las herramientas de personalización gráfica y visual permiten que cada jugador encuentre su equilibrio deseado entre rendimiento y estética, manteniendo por defecto una fidelidad gráfica limpia y completa (hojas en *Fancy*, partículas y animaciones nativas).
+
+---
+
+## Criterios de Calidad de Vida (QoL)
+
+Para que una funcionalidad sea admitida en *Keep Vanilla*, debe superar una evaluación rigurosa:
+
+- **Mejorar comodidad y usabilidad:** Solucionar pequeñas molestias o fricciones de interacción en la experiencia diaria.
+- **Aportar practicidad sin ventajas desleales:** Facilitar información que el juego ya calcula (como datos NBT de shulkers o saturación de alimentos) sin otorgar ventajas de tipo *cheat* ni alterar la dificultad.
+- **Discreción y estética Vanilla:** Cero interfaces sobrecargadas, barras de vida estilo RPG, números de daño flotantes o minimapas invasivos.
+- **Cero penalización de rendimiento:** Los mods QoL seleccionados son ultra ligeros, no generan picos de *Garbage Collection* ni degradan el *frametime*.
+- **Configuración al alcance del usuario:** Cada aspecto puede ajustarse o desactivarse fácilmente desde los menús del juego.
 
 ---
 
@@ -33,7 +44,7 @@ El objetivo central del modpack es exprimir al máximo el rendimiento del juego 
 
 ## Stack de Componentes
 
-El modpack se compone de 17 componentes estrictamente seleccionados y organizados por capas técnicas:
+El modpack se compone de 23 componentes estrictamente seleccionados y organizados por capas técnicas:
 
 ### 1. Renderizado y Gráficos
 | Componente | Capa / Área | Función Técnica |
@@ -43,14 +54,23 @@ El modpack se compone de 17 componentes estrictamente seleccionados y organizado
 | **ImmediatelyFast** | Renderizado (CPU) | Agrupación (*batching*) de llamadas de render para HUD, GUI y entidades |
 | **Entity Culling** | Oclusión (CPU Async) | Descarte de entidades ocultas tras muros mediante path-tracing en CPU |
 
-### 2. Configuración Visual y Opciones Avanzadas
+### 2. Calidad de Vida (Quality of Life)
+| Componente | Capa / Área | Función Técnica |
+| :--- | :--- | :--- |
+| **FabZoom** | Cámara / Zoom | Zoom suave y cinemático accionado por tecla configurable (por defecto `C`) |
+| **Shulker Box Tooltip** | Inventario / UI | Previsualización emergente del contenido de cajas de shulker sin colocarlas |
+| **AppleSkin** | HUD / Información | Visualización transparente de saturación, agotamiento y restauración de comida |
+| **Mouse Tweaks** | Controles / Inventario | Arrastre fluido y manipulación continua de ítems en contenedores y crafteo |
+| **Controlling** | Menú / Controles | Buscador y gestor de conflictos en la pantalla de asignación de teclas |
+
+### 3. Configuración Visual y Opciones Avanzadas
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Sodium Extra** | Opciones Gráficas | Control granular de partículas, animaciones individuales, niebla, cielo y detalles |
 | **Reese's Sodium Options** | Navegación de Menú | Panel vertical con desplazamiento y buscador integrado para las opciones de vídeo |
 | **Translations for Sodium** | Localización | Paquete de traducción multiidioma (incluyendo español) para Sodium y sus complementos |
 
-### 3. Lógica, Memoria y Eficiencia de CPU
+### 4. Lógica, Memoria y Eficiencia de CPU
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Lithium** | Lógica y Ticking (CPU) | Optimización de físicas, colisiones, IA y chunk loading sin tocar mecánicas Vanilla |
@@ -59,17 +79,18 @@ El modpack se compone de 17 componentes estrictamente seleccionados y organizado
 | **BadOptimizations** | Tick de Cliente | Micro-optimizaciones: bypass de recálculo de lightmap y optimización de color del cielo |
 | **Dynamic FPS** | Consumo energético | Reduce el consumo de CPU/GPU cuando el juego está en segundo plano |
 
-### 4. Red y Conectividad
+### 5. Red y Conectividad
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Krypton** | Red (Netty) | Optimización de la pila de red y serialización eficiente de buffers de paquetes |
 
-### 5. Base e Interfaz
+### 6. Base, Librerías e Interfaz
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Fabric API** | Base | API de interoperabilidad esencial para el ecosistema Fabric |
 | **Mod Menu** | Interfaz | Menú dentro del juego para consultar y configurar mods |
 | **Cloth Config API** | Librería de UI | Motor de pantallas de configuración requerido por mods del stack |
+| **Searchables** | Librería de búsqueda | Componente auxiliar de filtrado para Controlling |
 | **Placeholder API** | Librería de texto | Utilidad para formateo de cadenas usada por complementos de UI |
 
 ---
