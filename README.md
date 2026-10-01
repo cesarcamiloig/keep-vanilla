@@ -117,4 +117,4 @@ pw modrinth export
 pw update --all
 ```
 
-Las políticas técnicas de actualización y versionado están documentadas en [POLITICA_VERSIONES.md](POLITICA_VERSIONES.md).
+Para consultar el flujo de trabajo técnico paso a paso para añadir mods, actualizar componentes, alterar configuraciones y publicar releases, revisa el [Manual de Operaciones y Mantenimiento](MANUAL_OPERACIONES.md). Las reglas de clasificación de dependencias se detallan en [POLITICA_VERSIONES.md](POLITICA_VERSIONES.md).
