@@ -1,0 +1,76 @@
+name: Actualizador Automatico de Dependencias
+
+# Disparadores: Cada lunes a las 12:00 UTC y ejecucion manual desde la web
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+# Permisos necesarios para que el robot pueda crear ramas y abrir Pull Requests
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  comprobar-actualizaciones:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el codigo fuente del repositorio
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configurar entorno Go para ejecutar Packwiz nativamente en el runner
+      - name: Configurar Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      # 3. Compilar e instalar la version oficial de Packwiz
+      - name: Instalar Packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      # 4. Buscar parches de mods compatibles con nuestra version
+      - name: Ejecutar Packwiz Update
+        run: packwiz update --all
+
+      # 5. COMPUERTA DE SEGURIDAD (Categoria C):
+      # Validar que la version de Minecraft en pack.toml permanezca congelada en 26.2
+      - name: Verificar Bloqueo de Version de Minecraft
+        run: |
+          MC_VERSION=$(grep 'minecraft = ' pack.toml | cut -d '"' -f 2)
+          echo "Version de Minecraft detectada en pack.toml: $MC_VERSION"
+          if [ "$MC_VERSION" != "26.2" ]; then
+            echo "ERROR CRITICO: La automatizacion intento alterar la version base de Minecraft ($MC_VERSION != 26.2)."
+            echo "Esto viola la regla de Categoría C en POLITICA_VERSIONES.md. Abortando pipeline."
+            exit 1
+          fi
+          echo "Bloqueo de version superado: Minecraft permanece en 26.2."
+
+      # 6. Refrescar hashes por seguridad para asegurar consistencia
+      - name: Refrescar indice
+        run: packwiz refresh
+
+      # 7. Si hay modificaciones, abrir un Pull Request para revision humana
+      - name: Crear Pull Request si hay actualizaciones
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(deps): actualizar parches menores de mods"
+          branch: "automation/mod-updates"
+          delete-branch: true
+          title: "chore(deps): parches de mods detectados para Minecraft 26.2"
+          body: |
+            ## Actualizaciones de Dependencias (Categoría A)
+
+            El pipeline automatico de GitHub Actions ha detectado y aplicado parches compatibles dentro del ciclo de soporte de **Minecraft 26.2**.
+
+            ### Verificaciones realizadas por el robot:
+            - [x] Los mods fueron actualizados mediante `packwiz update --all`.
+            - [x] Se verifico que la version de Minecraft en `pack.toml` permanece bloqueada en `26.2`.
+            - [x] Se recalcularon las firmas criptograficas en `index.toml`.
+
+            > Revisa la pestana **Files changed** para inspeccionar el diff antes de aprobar y mergear este cambio a `main`.
+          labels: |
+            dependencies
+            automated-pr
