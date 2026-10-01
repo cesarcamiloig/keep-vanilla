@@ -10,4 +10,4 @@ entityDistanceScaling:1.0
 prioritizeChunkUpdates:0
 darkMojangStudiosBackground:true
 narrator:0
-guiScale:0
+guiScale:3

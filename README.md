@@ -13,8 +13,8 @@ Diseñado para **Minecraft 26.2** sobre **Fabric Loader**.
 > **Optimización profunda + estabilidad + eficiencia + mejoras de calidad de vida, manteniendo intacta la esencia y jugabilidad de Vanilla.**
 
 - **Esencia 100 % Vanilla:** No añade bloques, criaturas, dimensiones, armas ni altera el sistema de combate, progresión o recetas. Las físicas, el *spawning* y *despawning* de criaturas, los circuitos de redstone y los tiempos de crecimiento permanecen exactamente idénticos al juego base.
-- **Optimización Integral del Motor:** Sodium, Lithium, ImmediatelyFast, FerriteCore, ModernFix y Entity Culling rediseñan el renderizado, el consumo de memoria Heap y la lógica en CPU para erradicar micro-tirones (*stuttering*) y maximizar la estabilidad del *frame time*.
-- **Mejoras de Calidad de Vida (Quality of Life):** Funcionalidades discretas y altamente prácticas que eliminan fricciones cotidianas (zoom suave configurable con tecla `C`, previsualización de cajas de shulker en inventario, transparencia de valores de saturación, arrastre ergonómico de ítems y buscador de controles).
+- **Optimización Integral del Motor:** Sodium, Lithium, ImmediatelyFast, FerriteCore, ModernFix, Entity Culling, More Culling y Better Block Entities optimizan el renderizado, el consumo de memoria Heap y la lógica en CPU para erradicar micro-tirones (*stuttering*) y maximizar la estabilidad del *frame time*.
+- **Mejoras de Calidad de Vida (Quality of Life):** Funcionalidades discretas y altamente prácticas que eliminan fricciones cotidianas: zoom suave y cinemático (Zoomify con tecla `C`), previsualización de cajas de shulker en inventario, iluminación dinámica en mano, transparencia de valores de saturación, multijugador LAN sin abrir puertos (e4mc), soporte de capas cosméticas y buscador de controles.
 - **Libertad Total de Configuración:** Las herramientas de personalización gráfica y visual permiten que cada jugador encuentre su equilibrio deseado entre rendimiento y estética, manteniendo por defecto una fidelidad gráfica limpia y completa (hojas en *Fancy*, partículas y animaciones nativas).
 
 ---
@@ -35,6 +35,7 @@ Para que una funcionalidad sea admitida en *Keep Vanilla*, debe superar una eval
 
 *Keep Vanilla* incluye una configuración predeterminada equilibrada desde el primer inicio, diseñada para ofrecer la máxima estabilidad y suavidad sin deteriorar los gráficos:
 
+- **Tamaño de Interfaz (GUI Scale 3×):** Escala de interfaz calibrada en 3× por defecto para pantallas modernas (1080p y superiores), garantizando legibilidad óptima y menús proporcionados sin elementos diminutos.
 - **Distancia de Renderizado (12 chunks):** Horizonte amplio y natural (~441 chunks cargados) reduciendo en más del 60 % la carga geométrica en GPU frente a distancias excesivas (20-24 chunks).
 - **Distancia de Simulación (10 chunks):** Mantiene la esfera de *spawning* y comportamiento de entidades idéntica a Vanilla (128 bloques / 8 chunks), garantizando el funcionamiento exacto de granjas y circuitos de redstone con una reducción del 30 % en tiempo de tick de CPU.
 - **Pipeline de Terreno y Chunks:** Generación multihilo adaptada a la CPU (`chunkBuilderThreads: 0`), aplazamiento suave de mallas (`chunkBuildDeferMode: ALWAYS`) para eliminar micro-tirones al romper/colocar bloques, y oclusión de caras internas y fluidos ocultos.
@@ -44,22 +45,27 @@ Para que una funcionalidad sea admitida en *Keep Vanilla*, debe superar una eval
 
 ## Stack de Componentes
 
-El modpack se compone de 23 componentes estrictamente seleccionados y organizados por capas técnicas:
+El modpack se compone de 30 componentes estrictamente seleccionados y organizados por capas técnicas:
 
-### 1. Renderizado y Gráficos
+### 1. Renderizado, Oclusión y Gráficos
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Sodium** | Renderizado (GPU/CPU) | Motor de renderizado moderno para bloques y terreno |
 | **Iris Shaders** | Shaders (GPU) | Pipeline moderno para shaders compatible con Sodium |
 | **ImmediatelyFast** | Renderizado (CPU) | Agrupación (*batching*) de llamadas de render para HUD, GUI y entidades |
 | **Entity Culling** | Oclusión (CPU Async) | Descarte de entidades ocultas tras muros mediante path-tracing en CPU |
+| **More Culling** | Oclusión Avanzada | Oclusión optimizada de bloques complejos, marcos, carteles y modelos |
+| **Better Block Entities (BBE)** | Render de Bloques | Mapeo estático de cofres, señales y entidades de bloque en el render de terreno |
 
 ### 2. Calidad de Vida (Quality of Life)
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
-| **FabZoom** | Cámara / Zoom | Zoom suave y cinemático accionado por tecla configurable (por defecto `C`) |
+| **Zoomify (Zoom)** | Cámara / Zoom | Zoom suave, cinemático y configurable accionado por tecla (por defecto `C`) |
 | **Shulker Box Tooltip** | Inventario / UI | Previsualización emergente del contenido de cajas de shulker sin colocarlas |
+| **LambDynamicLights** | Iluminación Dinámica | Iluminación en tiempo real para antorchas y fuentes de luz en mano o suelo |
 | **AppleSkin** | HUD / Información | Visualización transparente de saturación, agotamiento y restauración de comida |
+| **e4mc** | Red / Multijugador | Apertura de partidas locales (LAN) a amigos por internet sin abrir puertos |
+| **Cape Provider** | Personalización | Visualización de capas cosméticas (OptiFine, LabyMod, etc.) en el cliente |
 | **Mouse Tweaks** | Controles / Inventario | Arrastre fluido y manipulación continua de ítems en contenedores y crafteo |
 | **Controlling** | Menú / Controles | Buscador y gestor de conflictos en la pantalla de asignación de teclas |
 
@@ -90,6 +96,8 @@ El modpack se compone de 23 componentes estrictamente seleccionados y organizado
 | **Fabric API** | Base | API de interoperabilidad esencial para el ecosistema Fabric |
 | **Mod Menu** | Interfaz | Menú dentro del juego para consultar y configurar mods |
 | **Cloth Config API** | Librería de UI | Motor de pantallas de configuración requerido por mods del stack |
+| **YetAnotherConfigLib (YACL)** | Librería de UI | Motor moderno de interfaces de configuración requerido por Zoomify |
+| **Fabric Language Kotlin** | Librería / Runtime | Soporte de ejecución Kotlin requerido por Zoomify |
 | **Searchables** | Librería de búsqueda | Componente auxiliar de filtrado para Controlling |
 | **Placeholder API** | Librería de texto | Utilidad para formateo de cadenas usada por complementos de UI |
 

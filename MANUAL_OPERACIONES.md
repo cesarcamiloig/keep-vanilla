@@ -33,29 +33,36 @@ proyecto-modpack-optimizacion/
 │   ├── modmenu.json                  # Ajustes de UI de Mod Menu
 │   ├── reeses_sodium_options.json    # Ajustes de interfaz vertical y buscador de Sodium
 │   └── sodium-options.json           # Parámetros avanzados del motor Sodium
-├── mods/                             # Manifiestos de mods gestionados por Packwiz (22 mods)
+├── mods/                             # Manifiestos de mods gestionados por Packwiz (29 mods)
 │   ├── appleskin.pw.toml             # [QoL] Visualización de saturación y comida
 │   ├── badoptimizations.pw.toml      # [Opt] Micro-optimizaciones de tick de cliente
+│   ├── better-block-entities.pw.toml # [Opt] Mapeo estático de entidades de bloque (BBE)
+│   ├── cape-provider.pw.toml         # [QoL] Visualización de capas cosméticas
 │   ├── cloth-config.pw.toml          # [Base] Librería de UI de configuración
 │   ├── controlling.pw.toml           # [QoL] Buscador y gestor de teclas
 │   ├── dynamic-fps.pw.toml           # [Opt] Reducción de consumo en segundo plano
+│   ├── e4mc.pw.toml                  # [QoL] Conexión multijugador LAN sin abrir puertos
 │   ├── entityculling.pw.toml         # [Opt] Oclusión asíncrona de entidades
 │   ├── fabric-api.pw.toml            # [Base] API modular para Fabric
-│   ├── fabzoom.pw.toml               # [QoL] Zoom suave con tecla 'C'
+│   ├── fabric-language-kotlin.pw.toml# [Base] Runtime Kotlin requerido por Zoomify
 │   ├── ferrite-core.pw.toml          # [Opt] Reducción de memoria en modelos/bloques
 │   ├── immediatelyfast.pw.toml       # [Opt] Optimización de render de HUD/GUI
 │   ├── iris.pw.toml                  # [Opt] Pipeline moderno de shaders
 │   ├── krypton.pw.toml               # [Opt] Optimización de pila de red
+│   ├── lambdynamiclights.pw.toml     # [QoL] Iluminación dinámica en tiempo real
 │   ├── lithium.pw.toml               # [Opt] Optimización de tick de físicas e IA
 │   ├── modernfix-mvus.pw.toml        # [Opt] Memoria y aceleración de arranque
 │   ├── modmenu.pw.toml               # [Base] Pantalla de gestión de mods
+│   ├── moreculling.pw.toml           # [Opt] Oclusión avanzada de bloques y modelos
 │   ├── mouse-tweaks.pw.toml          # [QoL] Manipulación ergonómica de inventario
 │   ├── placeholder-api.pw.toml       # [Base] Librería de formateo de texto
 │   ├── reeses-sodium-options.pw.toml # [Opt] Navegación vertical de opciones de vídeo
 │   ├── searchables.pw.toml           # [Base] Librería de búsqueda para Controlling
 │   ├── shulkerboxtooltip.pw.toml     # [QoL] Previsualización de cajas de shulker
 │   ├── sodium-extra.pw.toml          # [Opt] Control granular gráfico
-│   └── sodium.pw.toml                # [Opt] Motor principal de renderizado
+│   ├── sodium.pw.toml                # [Opt] Motor principal de renderizado
+│   ├── yacl.pw.toml                  # [Base] YetAnotherConfigLib para Zoomify
+│   └── zoomify.pw.toml               # [QoL] Zoom suave y cinemático con tecla 'C'
 ├── resourcepacks/                    # Recursos integrados en el modpack
 │   └── translations-for-sodium.pw.toml
 ├── .gitattributes                    # Forzado de saltos de línea LF (* text eol=lf)
