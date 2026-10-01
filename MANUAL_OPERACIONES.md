@@ -33,7 +33,7 @@ proyecto-modpack-optimizacion/
 │   ├── modmenu.json                  # Ajustes de UI de Mod Menu
 │   ├── reeses_sodium_options.json    # Ajustes de interfaz vertical y buscador de Sodium
 │   └── sodium-options.json           # Parámetros avanzados del motor Sodium
-├── mods/                             # Manifiestos de mods gestionados por Packwiz (29 mods)
+├── mods/                             # Manifiestos de mods gestionados por Packwiz (28 mods)
 │   ├── appleskin.pw.toml             # [QoL] Visualización de saturación y comida
 │   ├── badoptimizations.pw.toml      # [Opt] Micro-optimizaciones de tick de cliente
 │   ├── better-block-entities.pw.toml # [Opt] Mapeo estático de entidades de bloque (BBE)
@@ -48,7 +48,6 @@ proyecto-modpack-optimizacion/
 │   ├── ferrite-core.pw.toml          # [Opt] Reducción de memoria en modelos/bloques
 │   ├── immediatelyfast.pw.toml       # [Opt] Optimización de render de HUD/GUI
 │   ├── iris.pw.toml                  # [Opt] Pipeline moderno de shaders
-│   ├── krypton.pw.toml               # [Opt] Optimización de pila de red
 │   ├── lambdynamiclights.pw.toml     # [QoL] Iluminación dinámica en tiempo real
 │   ├── lithium.pw.toml               # [Opt] Optimización de tick de físicas e IA
 │   ├── modernfix-mvus.pw.toml        # [Opt] Memoria y aceleración de arranque

@@ -85,12 +85,7 @@ El modpack se compone de 30 componentes estrictamente seleccionados y organizado
 | **BadOptimizations** | Tick de Cliente | Micro-optimizaciones: bypass de recálculo de lightmap y optimización de color del cielo |
 | **Dynamic FPS** | Consumo energético | Reduce el consumo de CPU/GPU cuando el juego está en segundo plano |
 
-### 5. Red y Conectividad
-| Componente | Capa / Área | Función Técnica |
-| :--- | :--- | :--- |
-| **Krypton** | Red (Netty) | Optimización de la pila de red y serialización eficiente de buffers de paquetes |
-
-### 6. Base, Librerías e Interfaz
+### 5. Base, Librerías e Interfaz
 | Componente | Capa / Área | Función Técnica |
 | :--- | :--- | :--- |
 | **Fabric API** | Base | API de interoperabilidad esencial para el ecosistema Fabric |
