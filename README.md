@@ -59,17 +59,6 @@ El modpack se compone de 17 componentes estrictamente seleccionados y organizado
 
 ---
 
-## Rendimiento Verificado
-
-Pruebas reales en entorno local (Prism Launcher / PineconeMC):
-- **Hardware:** Intel Core i5-12600KF · AMD Radeon RX 7600 · 32 GB RAM (ZGC habilitado)
-- **Tasa media de cuadros:** ~1.400 FPS (distancia de render 12 chunks, Vanilla default)
-- **Estabilidad (1 % Lows / p99.5):** ~658 FPS
-- **Tiempo interno de tick:** 4.9 ms (margen amplio sobre el límite de 50 ms por tick)
-- **Estabilidad de Mixins:** 0 excepciones o colisiones registradas en `latest.log`
-
----
-
 ## Instalación
 
 ### Método recomendado (Prism Launcher / Modrinth App / PineconeMC)
