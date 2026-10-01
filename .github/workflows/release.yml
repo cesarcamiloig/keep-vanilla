@@ -32,6 +32,7 @@ jobs:
       # 3. Exportar el artefacto oficial .mrpack
       - name: Exportar Modpack a .mrpack
         run: |
+          packwiz refresh
           packwiz modrinth export
           echo "Artefactos generados:"
           ls -la *.mrpack

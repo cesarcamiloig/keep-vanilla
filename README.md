@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" alt="Keep Vanilla Logo" width="128" height="128" />
+</p>
+
 # Keep Vanilla
 
 Modpack de optimización profunda, estabilidad de *frame time* y eficiencia de recursos para **Minecraft 26.2** sobre **Fabric Loader**.
@@ -61,12 +65,15 @@ El modpack se compone de 17 componentes estrictamente seleccionados y organizado
 
 ## Instalación
 
-### Método recomendado (Prism Launcher / Modrinth App / PineconeMC)
-1. Ve a la pestaña de [Releases](https://github.com/cesarcamiloig/keep-vanilla/releases) y descarga el archivo más reciente con extensión `.mrpack` (ej. `Keep Vanilla-0.2.0.mrpack`).
-2. Abre tu launcher:
-   - **Prism Launcher / PineconeMC:** Haz clic en *Añadir instancia* -> *Importar* y selecciona el archivo `.mrpack`.
-   - **Modrinth App:** Arrastra el archivo `.mrpack` a la ventana de la aplicación o pulsa en *Add instance -> From file*.
-3. Inicia la instancia. Las dependencias y versiones de mods se descargan y verifican automáticamente contra los hashes oficiales.
+### Opción 1: Directa desde tu Launcher (Recomendada)
+1. Abre **Prism Launcher**, **Modrinth App**, **PineconeMC** o **ATLauncher**.
+2. Pulsa en **Añadir Instancia** y busca `Keep Vanilla`.
+3. Selecciona la versión deseada e inicia el juego.
+
+### Opción 2: Importar archivo `.mrpack`
+1. Descarga el archivo `.mrpack` desde [Releases](https://github.com/cesarcamiloig/keep-vanilla/releases) o desde [Modrinth](https://modrinth.com/modpack/keep-vanilla).
+2. En tu launcher, pulsa en **Añadir Instancia -> Importar** y selecciona el archivo `.mrpack`.
+3. Inicia la instancia. Todas las dependencias se descargan y verifican automáticamente contra los hashes oficiales.
 
 ---
 
@@ -75,15 +82,19 @@ El modpack se compone de 17 componentes estrictamente seleccionados y organizado
 Este proyecto utiliza [Packwiz](https://packwiz.infra.link/) para la gestión reproducible del modpack sin almacenar binarios `.jar` en el repositorio Git.
 
 ### Entorno aislado con Docker
-Para no requerir Go ni herramientas adicionales en la máquina anfitriona, el proyecto incluye un `Dockerfile` multi-stage ligero basado en Alpine Linux.
+El proyecto incluye un `Dockerfile` multi-stage ligero basado en Alpine Linux para ejecutar Packwiz de forma aislada sin requerir Go en la máquina anfitriona.
 
-En PowerShell de Windows, puedes usar la función local:
+1. Construir la imagen local (solo la primera vez):
+```powershell
+docker build -t packwiz-cli .
+```
 
+2. Definir el alias de conveniencia en PowerShell:
 ```powershell
 function pw { docker run --rm -it -v "${PWD}:/workspace" packwiz-cli $args }
 ```
 
-Comandos útiles:
+3. Comandos útiles:
 ```powershell
 # Actualizar el índice tras modificar archivos
 pw refresh

@@ -1,22 +1,11 @@
-# ==========================================
-# 1. Binarios de Mods (Seguridad y Licencias)
-# Packwiz usa archivos .pw.toml, nunca .jar
-# ==========================================
+# Binarios de mods y paquetes generados
 *.jar
-
-# ==========================================
-# 2. Artefactos de Distribución Generados
-# Se construyen al exportar, no son código fuente
-# ==========================================
 *.mrpack
 *.zip
 dist/
 build/
 
-# ==========================================
-# 3. Archivos de ejecución de Minecraft/Java
-# Por si se prueba el directorio localmente
-# ==========================================
+# Entorno local y datos de Minecraft
 logs/
 crash-reports/
 saves/
@@ -26,9 +15,7 @@ usercache.json
 usernamecache.json
 options.txt
 
-# ==========================================
-# 4. Sistema Operativo y Editores
-# ==========================================
+# Sistema operativo y entornos de desarrollo
 .DS_Store
 Thumbs.db
 Desktop.ini
