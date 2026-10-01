@@ -1,0 +1,53 @@
+name: Publicar Release
+
+# Se dispara automaticamente cuando empujas un tag que empiece por 'v' (ej: v0.1.0)
+# Tambien permite ejecucion manual desde la web si hiciera falta
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  construir-y-publicar:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el codigo del tag correspondiente
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configurar Go e instalar Packwiz
+      - name: Configurar Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Instalar Packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      # 3. Exportar el artefacto oficial .mrpack
+      - name: Exportar Modpack a .mrpack
+        run: |
+          packwiz modrinth export
+          echo "Artefactos generados:"
+          ls -la *.mrpack
+
+      # 4. Crear la GitHub Release y adjuntar el archivo .mrpack
+      - name: Crear GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.mrpack"
+          generate_release_notes: true
+          name: "Keep Vanilla ${{ github.ref_name }}"
+          body: |
+            ## Keep Vanilla - Modpack de Optimización para Minecraft 26.2
+
+            ### Instrucciones de Instalación:
+            1. Descarga el archivo `.mrpack` adjunto abajo.
+            2. Abre **PineconeMC**, **Prism Launcher** o **Modrinth App**.
+            3. Haz clic en **Añadir Instancia -> Importar** y selecciona el archivo `.mrpack`.
+            4. ¡Listo para jugar a más de 1000 FPS con soporte de shaders opcional!
