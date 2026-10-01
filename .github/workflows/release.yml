@@ -55,8 +55,9 @@ jobs:
             3. Haz clic en **Añadir Instancia -> Importar** y selecciona el archivo `.mrpack`.
             4. ¡Listo para jugar con máximo rendimiento, estabilidad y comodidad!
 
-      # 5. Publicar automáticamente en Modrinth
+      # 5. Publicar automáticamente en Modrinth (opcional si existe secreto MODRINTH_TOKEN)
       - name: Publicar en Modrinth
+        continue-on-error: true
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           modrinth-id: keep-vanilla
