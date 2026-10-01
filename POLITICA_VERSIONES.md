@@ -14,7 +14,7 @@ Este documento establece el flujo técnico de actualización de dependencias y c
 ### Nuevas Dependencias o Configuraciones
 - **Alcance:** Introducción de librerías requeridas por nuevos parches o ajustes en la carpeta `config/`.
 - **Flujo:** Manual o auditado en PR.
-- **Criterio de aceptación:** Se descarta cualquier librería o ajuste que degrade la estética original, altere interfaces de forma intrusiva o modifique mecánicas Vanilla.
+- **Criterio de aceptación:** Se descarta cualquier librería o ajuste que altere las mecánicas base de Minecraft, introduzca contenido ajeno a Vanilla o comprometa la estabilidad técnica del juego.
 
 ### Saltos de Versión de Minecraft (Major Updates)
 - **Alcance:** Migración del modpack a una nueva versión mayor de Minecraft (ej. de `26.2` a futuras versiones).

@@ -1,22 +1,18 @@
 # Keep Vanilla
 
-Modpack de optimización, estabilidad de *frame time* y eficiencia de recursos para **Minecraft 26.2** sobre **Fabric Loader**.
+Modpack de optimización profunda, estabilidad de *frame time* y eficiencia de recursos para **Minecraft 26.2** sobre **Fabric Loader**.
 
-Diseñado bajo un principio estricto: **fidelidad 100 % a la experiencia Vanilla**. Sin degradar gráficos, sin apagar partículas esenciales, sin alterar mecánicas del juego y con soporte nativo de shaders vía Iris que no consume recursos cuando los shaders están desactivados.
+Construido bajo un principio claro: **máxima optimización técnica sin alterar las mecánicas base de Minecraft, dejando el control visual y la personalización gráfica en manos del usuario.**
 
 ---
 
-## ¿Por qué Keep Vanilla?
+## Filosofía de Keep Vanilla
 
-Muchos paquetes de optimización consiguen números altos de FPS a costa de recortar la experiencia gráfica: reduciendo distancia de animación, eliminando efectos de partículas, bajando la calidad del cielo o modificando interfaces.
+El objetivo central del modpack es exprimir al máximo el rendimiento del juego —tasas altas de FPS, estabilidad en el tiempo de cuadro (*frame time*), tiempos de carga reducidos y eliminación de micro-tirones (*stuttering*)— manteniendo intacta la experiencia y la jugabilidad de Minecraft Vanilla:
 
-**Keep Vanilla** toma el camino de la ingeniería:
-- **Reemplazo del pipeline de renderizado:** Sodium reescribe el renderizado de terreno con OpenGL moderno y técnicas avanzadas de frustum culling.
-- **Optimización de memoria y recolector de basura:** FerriteCore reduce el peso de estados y modelos de bloques en la memoria Heap de Java, mitigando los tirones causados por el Garbage Collector (GC).
-- **Lógica interna sin cambios mecánicos:** Lithium rediseña la matemática de colisiones, físicas y procesamiento de chunks en hilos del procesador sin alterar el comportamiento de granjas ni redstone.
-- **Oclusión asíncrona:** Entity Culling descarta el renderizado de entidades que están completamente ocultas detrás de bloques opacos mediante trazado de rayos liviano en CPU.
-- **Batching en interfaz y textos:** ImmediatelyFast agrupa llamadas de dibujo para el HUD, nombres y entidades, evitando cuellos de botella en la CPU.
-- **Soporte de Shaders moderno:** Iris Shaders permite activar paquetes de shaders compatibles con Sodium al vuelo, con impacto cero cuando se mantienen apagados.
+- **Mecánicas 100 % Vanilla:** Sin añadir contenido ajeno ni alterar físicas, sistemas de redstone, colisiones, spawning de criaturas ni mecánicas del juego base.
+- **Optimización integral del motor:** Sodium, Lithium, ImmediatelyFast, FerriteCore y Entity Culling rediseñan el renderizado, el consumo de memoria Heap y la lógica en CPU de manera limpia y eficiente.
+- **Libertad total de configuración:** El modpack integra herramientas para que cada jugador configure libremente su balance entre calidad visual y rendimiento. Ya sea que busques exprimir hasta el último fotograma en hardware modesto o disfrutar de shaders complejos en equipos potentes, la decisión sobre partículas, animaciones, niebla o distancia de renderizado es siempre tuya.
 
 ---
 
