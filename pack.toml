@@ -1,13 +1,13 @@
 name = "Keep Vanilla"
 author = "cesarcamiloig"
-version = "0.1.0"
+version = "0.2.0"
 description = "Modpack de máxima optimización y estabilidad para Minecraft 26.2 en Fabric. Rendimiento superior y control visual total sin alterar las mecánicas Vanilla del juego."
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "1813975ca342d170b9513b3f919b7c44f6065d7237a65e3ec6859bebf3a3ad07"
+hash = "31bf7f4b443a152e6fce5510e28c9fe3f66b6de9f8d42583869f96b94013a8b0"
 
 [versions]
 fabric = "0.19.5"
