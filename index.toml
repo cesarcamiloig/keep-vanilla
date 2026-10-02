@@ -154,7 +154,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "b46289ef6d10d4456d6cd56cff044132e1ca38102a3d73d0fdb4d1c93d9eaddc"
+hash = "272cf16adb9dfb7549cadee5fcdac541239b00d83c8affdad476e08425d0151d"
 
 [[files]]
 file = "resourcepacks/translations-for-sodium.pw.toml"
