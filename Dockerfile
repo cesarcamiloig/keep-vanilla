@@ -3,7 +3,6 @@ FROM golang:alpine AS builder
 
 RUN go install github.com/packwiz/packwiz@latest
 
-
 FROM alpine:3.21
 
 # Certificados para conexiones HTTPS y git para las operaciones de packwiz.
